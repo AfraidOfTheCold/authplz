@@ -6,13 +6,12 @@
         <title>Twitch</title>
     </head>
     <body>
+        <p>This is a simple HTML page deployed on Github Pages.</p>
         <script>
             let u = new URL(location);
             let p = u.searchParams;
             let from = JSON.parse(atob(p.get("state")))?.from;
-            window.addEventListener("ready", () => {
-                document.body.innerHTML = `<a href="http://${from}:3000/auth/twitch?${p.toString()}">finish</a>`;
-            });
+            document.body.innerHTML = `<a href="http://${from}:3000/auth/twitch?${p.toString()}">finish</a>`;
         </script>
     </body>
 </html>
